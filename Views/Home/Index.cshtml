@@ -1,0 +1,24 @@
+﻿@model Translator.Models.MessageViewModel
+@{
+    ViewBag.Title = "Translator";
+}
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h3>Translator</h3>
+        </div>
+    </div>
+    <div class="row">
+        @using (Html.BeginForm("index", "Home", FormMethod.Post))
+        {
+            <label>Write text to translate</label>
+            @Html.TextBoxFor(m => m.Text)
+            <button type="submit">Translate</button>
+        }
+    </div>
+    <div class="row">
+        <p>@ViewData["Message"]</p>
+    </div>
+</div>
+
+
